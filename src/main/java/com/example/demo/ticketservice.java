@@ -30,6 +30,13 @@ public class ticketservice {
 		 ticketda.deleteAll(gettickets());
 		return "all data deleted";
 	}
+	public ticket updateticket(Integer ticketId,String newname) {
+		ticket dbticket=getticket(ticketId);
+		dbticket.setTicketholdername(newname);
+		return dbticket;
+		
+		
+	}
 	
 	
 }
