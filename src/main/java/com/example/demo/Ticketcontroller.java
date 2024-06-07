@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -35,5 +36,10 @@ public String delticket(@RequestBody ticket ticketobj) {
 public ticket getticket( @PathVariable(value="ticketId")Integer ticketId) {
     return ( ticket)ticketservive.getticket(ticketId);
 }	
+
+@PutMapping(value ="/{ticketId}/{newname}")
+public ticket updateticket( @PathVariable(value="ticketId")Integer ticketId,@PathVariable(value="newname")String newname) {
+    return ( ticket)ticketservive.updateticket(ticketId,newname);
+}
 
 }
