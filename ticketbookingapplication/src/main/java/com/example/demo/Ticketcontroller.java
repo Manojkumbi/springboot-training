@@ -38,9 +38,9 @@ public ticket getticket( @PathVariable(value="ticketId")Integer ticketId) {
     return ( ticket)ticketservive.getticket(ticketId);
 }	
 
-@PutMapping(value ="/{ticketId}/{newname}")
-public String updateticket( @PathVariable(value="ticketId")Integer ticketId,@PathVariable(value="newname")String newname) {
-   ticketservive.updateticket(ticketId,newname);
+@PutMapping(value ="/{ticketId}/{newname}/{newdest}/{newsour}")
+public String updateticket( @PathVariable(value="ticketId")Integer ticketId,@PathVariable(value="newname")String newname,@PathVariable(value="newdest") String newdest,@PathVariable(value="newsour") String newsour) {
+   ticketservive.updateticket(ticketId,newname,newdest,newsour);
     return "updated";
 }
 

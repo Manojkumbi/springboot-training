@@ -30,8 +30,10 @@ public class ticketservice {
 		 ticketda.deleteAll(gettickets());
 		return "all data deleted";
 	}
-	public ticket updateticket(Integer ticketId,String newname) {
+	public ticket updateticket(Integer ticketId,String newname,String newdest,String newsour) {
 		ticket dbticket=getticket(ticketId);
+		dbticket.setDestination(newdest);
+		dbticket.setSourcesdesti(newsour);
 		dbticket.setTicketholdername(newname);
 		ticketda.save(dbticket);
 		return dbticket;
