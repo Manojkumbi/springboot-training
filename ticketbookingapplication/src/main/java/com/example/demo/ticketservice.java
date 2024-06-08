@@ -13,8 +13,8 @@ public class ticketservice {
 	}
 
 
-	public String Deleteticket(ticket ticketobj) {
-		ticketda.delete(ticketobj);
+	public String Deleteticket(Integer ticketId) {
+		ticketda.deleteById(ticketId);
 		return "deleted";
 		
 	}

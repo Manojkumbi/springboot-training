@@ -22,9 +22,10 @@ public ticket Createticket(@RequestBody ticket ticketobj) {
 public Iterable<ticket> gettickets(@RequestBody ticket ticketobj) {
     return ticketservive.gettickets();
 }	
-@DeleteMapping(value="/del")
-public String Deleteticket(@RequestBody ticket ticketobj) {
-    return ticketservive.Deleteticket(ticketobj);
+@DeleteMapping(value="/del/{ticketId}")
+public String Deleteticket(@PathVariable(value="ticketId")Integer ticketId) {
+    ticketservive.Deleteticket(ticketId);
+    return "deleted";
 }
 
 @DeleteMapping(value="/delall")
