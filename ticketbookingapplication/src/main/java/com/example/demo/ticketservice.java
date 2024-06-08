@@ -33,6 +33,7 @@ public class ticketservice {
 	public ticket updateticket(Integer ticketId,String newname) {
 		ticket dbticket=getticket(ticketId);
 		dbticket.setTicketholdername(newname);
+		ticketda.save(dbticket);
 		return dbticket;
 		
 		

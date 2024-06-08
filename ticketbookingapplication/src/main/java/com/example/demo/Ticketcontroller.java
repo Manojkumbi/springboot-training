@@ -39,9 +39,9 @@ public ticket getticket( @PathVariable(value="ticketId")Integer ticketId) {
 }	
 
 @PutMapping(value ="/{ticketId}/{newname}")
-public ticket updateticket( @PathVariable(value="ticketId")Integer ticketId,@PathVariable(value="newname")String newname) {
-    return ( ticket)ticketservive.updateticket(ticketId,newname);
-    
+public String updateticket( @PathVariable(value="ticketId")Integer ticketId,@PathVariable(value="newname")String newname) {
+   ticketservive.updateticket(ticketId,newname);
+    return "updated";
 }
 
 }
