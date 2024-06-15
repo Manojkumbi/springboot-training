@@ -25,4 +25,13 @@ public class accountservice {
 	public Iterable<accountcl> getAccountcl() {
 		return accountdao.findAll();
 	}
+	
+	public accountcl updateacc(Integer accountno,Integer newbalance) {
+		accountcl dbticket=getAccountcl(accountno);
+		dbticket.setDestination(newdest);
+		dbticket.setSourcesdesti(newsour);
+		dbticket.setTicketholdername(newname);
+		ticketda.save(dbticket);
+		return dbticket;
+	}
 	}
